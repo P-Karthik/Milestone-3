@@ -55,7 +55,7 @@ pipeline
 			steps{
 				script {
 					dir('discovery-server') {
-						bat 'docker run -p 8761:8761 docker-discovery-server'
+						bat 'docker run --name docker-discovery-server -p 8761:8761 docker-discovery-server'
 					}
 				}
 			}
