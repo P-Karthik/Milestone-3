@@ -20,7 +20,7 @@ pipeline {
         stage('Compile stage') {
             steps {
 			script {
-      dir('cmiot-services/comm') {
+      dir('discovery-server') {
                 bat "mvn clean compile" 
         }}}
     }
