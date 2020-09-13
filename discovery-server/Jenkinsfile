@@ -18,9 +18,11 @@ pipeline {
 		}
 		}
         stage('Compile stage') {
+		script {
+      dir('cmiot-services/comm') {
             steps {
                 bat "mvn clean compile" 
-        }
+        }}}
     }
  
          stage('testing stage') {
