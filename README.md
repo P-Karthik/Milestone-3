@@ -18,15 +18,15 @@ Folder: Microservices contains the backend microservices coded in spring boot<br
 4. Now got to localhost:4200 for the application.<br />
 <br />
 5. (Optional) In order to test the microservices seperately send all the requests to localhost:8080/\<microservice name\>/\<URL PATH defined in controller\><br />
-<br/>
+<br />
 ## Milestone 3
 Added Jenkinsfile and Dockerfile in discovery-server microservice, the jenkiins pipeline consists of the following stages:
 
----Git clone/pull stage
----Compile stage
----Testing stage
----Build and package stage
----Build docker image stage
----Run docker container stage
+---Git clone/pull stage<br />
+---Compile stage<br />
+---Testing stage<br />
+---Build and package stage<br />
+---Build docker image stage<br />
+---Run docker container stage<br />
 
 
