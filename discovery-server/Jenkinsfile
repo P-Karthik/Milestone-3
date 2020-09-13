@@ -12,6 +12,11 @@ pipeline {
                 git 'https://github.com/P-Karthik/Milestone-3.git'
             }
         }
+		stage('Move to discovery-server directory'){
+		steps{
+		bat "cd discovery-server"
+		}
+		}
         stage('Compile stage') {
             steps {
                 bat "mvn clean compile" 
