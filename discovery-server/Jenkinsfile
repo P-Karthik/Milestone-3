@@ -1,4 +1,5 @@
-pipeline {
+pipeline
+{
     agent any
 
     tools {
@@ -12,39 +13,52 @@ pipeline {
                 git 'https://github.com/P-Karthik/Milestone-3.git'
             }
         }
-		stage('Move to discovery-server directory'){
-		steps{
-		bat "cd discovery-server"
-		}
-		}
-        stage('Compile stage') {
+		stage('Compile stage') {
             steps {
-			script {
-      dir('discovery-server') {
-                bat "mvn clean compile" 
-        }}}
-    }
- 
-         stage('testing stage') {
-             steps {
-                bat "mvn test"
-        }
-    }
- 
-          stage('build stage') {
-              steps {
-                bat "mvn package"
-        }
-    }
-			stage('Build Docker Image'){
-				steps{
-			bat 'docker build -f Dockerfile -t docker-discovery-server .'
+				script {
+					dir('discovery-server') {
+						bat "mvn clean compile" 
+					}
+				}
 			}
-	}
+		}
+ 
+        stage('testing stage') {
+            steps {
+				script {
+					dir('discovery-server') {
+						bat "mvn test"
+					}
+				}
+			}
+		}
+ 
+        stage('build stage') {
+            steps {
+				script {
+					dir('discovery-server') {
+						bat "mvn package"
+					}
+				}
+			}
+		}
+		stage('Build Docker Image'){
+			steps{
+				script {
+					dir('discovery-server') {
+						bat 'docker build -f Dockerfile -t docker-discovery-server .'
+					}
+				}
+			}
+		}
 		stage('Run Docker Image'){
-				steps{
-			bat 'docker run -p 8761:8761 docker-discovery-server'
+			steps{
+				script {
+					dir('discovery-server') {
+						bat 'docker run -p 8761:8761 docker-discovery-server'
+					}
+				}
 			}
-	}
+		}
     }
 }
