@@ -29,6 +29,15 @@ pipeline {
                 bat "mvn package"
         }
     }
-
+			stage('Build Docker Image'){
+				steps{
+			bat 'docker build -f Dockerfile -t docker-discovery-server .'
+			}
+	}
+		stage('Run Docker Image'){
+				steps{
+			bat 'docker run -p 8761:8761 docker-discovery-server'
+			}
+	}
     }
 }
