@@ -1,0 +1,63 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav"> -->
+      <app-logoutbt></app-logoutbt>
+      <h1 center>Admin Funtionalities-<span><a [routerLink]="[ 'getCharts' ]" routerLinkActive="active">Charts</a></span></h1>
+      <br>
+      <div class="dropdown">
+        <button class="dropbtn">IPO</button>
+        <div class="dropdown-content">
+          <a [routerLink]="[ 'getIpo' ]" routerLinkActive="active">All Ipos</a>
+          <a [routerLink]="[ 'manageipo' ]" routerLinkActive="active">Manage Ipos</a>
+        </div>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="dropdown">
+        <button class="dropbtn">COMPANYS</button>
+        <div class="dropdown-content">
+          <a [routerLink]="[ 'getCompany' ]" routerLinkActive="active">All Companies</a>
+          <a [routerLink]="[ 'managecompany' ]" routerLinkActive="active">Manage Companies</a>
+        </div>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="dropdown">
+        <button class="dropbtn">STOCKS</button>
+        <div class="dropdown-content">
+          <a [routerLink]="[ 'getStocks' ]" routerLinkActive="active">All Stocks</a>
+          <a [routerLink]="[ 'managestocks' ]" routerLinkActive="active">Manage Stocks</a>
+        </div>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="dropdown">
+        <button class="dropbtn">STOCKS EXCHANGE</button>
+        <div class="dropdown-content">
+          <a [routerLink]="[ 'getStockExchange' ]" routerLinkActive="active">All StocksExchange</a>
+          <a [routerLink]="[ 'managestockexchange' ]" routerLinkActive="active">Manage StocksExchange</a>
+        </div>
+      </div>
+      <!-- </ul>
+  </div>
+</nav> -->
+<!-- <div class="container">
+    <h1>Welcome User</h1>
+
+    
+        <a [routerLink]="[ 'ipo' ]" routerLinkActive="active">IPO</a> |  
+        <a [routerLink]="['getIpo']" routerLinkActive="active">Get/Delete Ipo </a> | 
+        <a [routerLink]="['exchange']">Manage Exchange</a> | 
+        <a [routerLink]="['profile']">Profile</a>
+
+        
+   
+</div> -->
+<router-outlet></router-outlet>

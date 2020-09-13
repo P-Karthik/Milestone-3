@@ -1,0 +1,47 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Stocks</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<div class="form-group col-md-6">
+    <label for="inputcname">Company Code</label>
+    <input type="text" class="form-control" id="inputcname" [(ngModel)]="companyCode" name="cname">
+</div>
+<div class="form-group col-md-6">
+    <label for="inputcname">Se Name</label>
+    <input type="text" class="form-control" id="inputcname" [(ngModel)]="seName" name="cname">
+</div>
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">GetStocks</button>
+        </form>
+        <form #f="ngForm"
+              (ngSubmit)="onDelete()">
+ <h3>Delete Stock</h3>
+<div class="form-group col-md-6">
+                                            <label for="inputcname">Se Name</label>
+                                            <input type="text" class="form-control" id="inputcname" [(ngModel)]="seName1" name="cname">
+                                        </div>
+<button type="submit" 
+                                        [disabled]="f.invalid"
+                                        class="btn btn-primary">DeleteStocks</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<hr>
+  <table id='users'>
+    <caption>For Displaying the Stocks</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of stockDetails'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

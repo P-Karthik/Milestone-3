@@ -1,0 +1,39 @@
+<div class="row">
+<div class="col-md-6 offset-md-3 mt-4">
+<form #f="ngForm"
+(ngSubmit)="onSubmit(f)">
+    <h3>Update IPO</h3>
+    <div class="form-group col-md-6">
+        <label for="inputcid">Company Id</label>
+        <input type="number" class="form-control" id="inputcid" [(ngModel)]="companyid" name="cid">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputcname">Company Name</label>
+        <input type="text" class="form-control" id="inputcname" [(ngModel)]="companyname" name="cname">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputexchange">Stock Exchange</label>
+        <input type="text" class="form-control" id="inputexchange" [(ngModel)]="se" name="sename">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputprice">Price per share</label>
+        <input type="number" step="0.01" class="form-control" id="inputprice" [(ngModel)]="pps" name="ppps">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputtotal">Total number of Shares</label>
+        <input type="number" class="form-control" id="inputtotal" [(ngModel)]="tns" name="ttns">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputdate">Open Date Time</label>
+        <input type="datetime-local" class="form-control" id="inputdate" [(ngModel)]="odt" name="oddt">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputabout">Remarks</label>
+        <input type="text" class="form-control" id="inputabout" [(ngModel)]="remarks" name="rem">
+    </div>
+    <button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">Update</button>
+                </form>
+</div>
+</div>

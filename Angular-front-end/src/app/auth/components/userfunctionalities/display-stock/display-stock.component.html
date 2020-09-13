@@ -1,0 +1,36 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Stocks</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<div class="form-group col-md-6">
+    <label for="inputcname">Stock Id</label>
+    <input type="number" class="form-control" id="inputcname" [(ngModel)]="stockid" name="cname">
+</div>&nbsp;&nbsp;&nbsp;
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">Get Stocks</button>
+                    <br><br><hr>
+                    <label for="inputcname">Displaying all the Stocks</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" (click)="onAllStocks()"
+                                        [disabled]="f.invalid"
+                                        class="btn btn-primary">Display</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+  <table id='users'>
+    <caption>For Displaying the Stocks</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of stockDetails'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

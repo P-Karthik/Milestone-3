@@ -16,7 +16,7 @@ pipeline
 		stage('Compile stage') {
             steps {
 				script {
-					dir('discovery-server') {
+					dir('microservices/discovery-server') {
 						bat "mvn clean compile" 
 					}
 				}
@@ -26,7 +26,7 @@ pipeline
         stage('testing stage') {
             steps {
 				script {
-					dir('discovery-server') {
+					dir('microservices/discovery-server') {
 						bat "mvn test"
 					}
 				}
@@ -36,7 +36,7 @@ pipeline
         stage('build stage') {
             steps {
 				script {
-					dir('discovery-server') {
+					dir('microservices/discovery-server') {
 						bat "mvn package"
 					}
 				}
@@ -45,7 +45,7 @@ pipeline
 		stage('Build Docker Image'){
 			steps{
 				script {
-					dir('discovery-server') {
+					dir('microservices/discovery-server') {
 						bat 'docker build -f Dockerfile -t docker-discovery-server .'
 					}
 				}
@@ -54,7 +54,7 @@ pipeline
 		stage('Run Docker Image'){
 			steps{
 				script {
-					dir('discovery-server') {
+					dir('microservices/discovery-server') {
 						bat 'docker run --name docker-discovery-server -p 8761:8761 docker-discovery-server'
 					}
 				}

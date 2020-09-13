@@ -1,0 +1,41 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Stocks</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<!-- <div class="form-group col-md-6"
+    <label for="inputcname">Company Name</label>
+    <input type="text" class="form-control" id="inputcname" [(ngModel)]="seName" name="cname">
+</div> -->
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">GetAllStockExchangeDetails</button>
+                    <br>
+                    <h3>Delete Stock</h3>
+<div class="form-group col-md-6">
+                                                                <label for="inputcname">StockExchange  Id</label>
+                                                                <input type="text" class="form-control" id="inputcname" [(ngModel)]="id" name="cname">
+                                                            </div>
+&nbsp;&nbsp;&nbsp;<button type="submit" (click)="onDelete()"
+                                                            [disabled]="f.invalid"
+                                                            class="btn btn-primary">DeleteStockExchange</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<hr>
+  <table id='users'>
+    <caption>For Displaying the Stock Exchanges</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of stockExchange'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Company</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<div class="form-group col-md-6">
+    <label for="inputcname">Company Code</label>
+    <input type="number" class="form-control" id="inputcname" [(ngModel)]="companycode" name="cname">
+</div>
+&nbsp;&nbsp;&nbsp;
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">GetCompany</button>
+                    <br><br><hr>
+                    <label for="inputcname">Display All Companies</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" (click)="onAllCompanies()"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">Display</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+  <table id='users'>
+    <caption>For Displaying the Companies</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of companyDetails'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

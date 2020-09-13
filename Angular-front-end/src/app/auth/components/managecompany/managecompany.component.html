@@ -1,0 +1,45 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+    <form #f="ngForm"
+    (ngSubmit)="onSubmit(f)">
+        <h3>Update Company</h3>
+        <div class="form-group col-md-6">
+            <label for="inputcid">Company Id</label>
+            <input type="number" class="form-control" id="inputcid" [(ngModel)]="companyId" name="cid">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputcname">Company Name</label>
+            <input type="text" class="form-control" id="inputcname" [(ngModel)]="companyName" name="cname">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputexchange">Turnover</label>
+            <input type="number" class="form-control" id="inputexchange" [(ngModel)]="turnover" name="sename">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputprice">CEO</label>
+            <input type="text" step="0.01" class="form-control" id="inputprice" [(ngModel)]="ceo" name="ppps">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputtotal">Board of Directors</label>
+            <input type="text" class="form-control" id="inputtotal" [(ngModel)]="boardOfDirectors" name="ttns">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputdate">Sector</label>
+            <input type="text" class="form-control" id="inputdate" [(ngModel)]="sector" name="oddt">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputabout">Remarks</label>
+            <input type="text" class="form-control" id="inputabout" [(ngModel)]="about" name="rem">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputabout">CompanyCode</label>
+            <input type="text" class="form-control" id="inputabout" [(ngModel)]="companyCode" name="rem">
+        </div>
+        <button type="submit"
+                        [disabled]="f.invalid"
+                        class="btn btn-primary">Update</button>
+                    </form>
+    </div>
+    </div>
+    

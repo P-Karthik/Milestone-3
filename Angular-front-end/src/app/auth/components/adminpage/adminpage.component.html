@@ -1,0 +1,47 @@
+<app-logoutbt></app-logoutbt>
+    <h1 center>User Funtionalities-<span><a [routerLink]="[ 'getProfile' ]" routerLinkActive="active">Profile</a></span>
+    -<span><a [routerLink]="[ 'getCharts' ]" routerLinkActive="active">Charts</a></span>
+    </h1>
+    <br>
+    <div class="dropdown">
+      <button class="dropbtn">IPO</button>
+      <div class="dropdown-content">
+        <a [routerLink]="[ 'getIpo' ]" routerLinkActive="active">All Ipos</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <div class="dropdown">
+      <button class="dropbtn">COMPANYS</button>
+      <div class="dropdown-content">
+        <a [routerLink]="[ 'userCompany' ]" routerLinkActive="active">All Companies</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <div class="dropdown">
+      <button class="dropbtn">STOCKS</button>
+      <div class="dropdown-content">
+        <a [routerLink]="[ 'userStocks' ]" routerLinkActive="active">All Stocks</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <div class="dropdown">
+      <button class="dropbtn">STOCKS EXCHANGE</button>
+      <div class="dropdown-content">
+        <a [routerLink]="[ 'getStockExchange' ]" routerLinkActive="active">All StocksExchange</a>
+      </div>
+    </div>
+
+    
+        <!-- <a [routerlink]="['importexcel']">Import Data</a> | 
+        <a [routerLink]="['managecompany']">Manage Company</a> | 
+        <a [routerLink]="['exchange']">Manage Exchange</a> -->
+        <!-- <a [routerLink]="['getIpo']">Update IPO</a> -->
+
+        <router-outlet></router-outlet>
+   

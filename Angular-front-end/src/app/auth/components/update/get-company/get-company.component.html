@@ -1,0 +1,41 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Company</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<div class="form-group col-md-6">
+    <label for="inputcname">Company Code</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" id="inputcname" [(ngModel)]="companycode" name="cname">
+</div>
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">GetCompany</button>
+        </form>
+        <hr>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <form #f="ngForm"
+              (ngSubmit)="onDelete()">
+<div class="form-group col-md-9">
+                    <button type="submit" 
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">DeleteCompany</button>
+</div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+  <table id='users'>
+    <caption>For Displaying the Companies</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of companyDetails'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

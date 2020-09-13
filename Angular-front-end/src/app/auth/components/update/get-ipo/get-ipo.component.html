@@ -1,0 +1,42 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Display Ipo</h3>
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f)">
+<div class="form-group col-md-6">
+    <label for="inputcname">Company Name</label>
+    <input type="text" class="form-control" id="inputcname" [(ngModel)]="companyname" name="cname">
+</div>
+<button type="submit"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">GetIPo</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <br>
+        <h3>Delete Ipo</h3>
+<div class="form-group col-md-6">
+                        <label for="inputcname">Ipo Id</label>
+                        <input type="number" class="form-control" id="inputcname" [(ngModel)]="id" name="cname">
+                    </div>
+<button type="submit" (click)="onDelete()"
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">DeleteIpo</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<hr>
+  <table id='users'>
+    <caption>For Displaying the Ipos</caption>
+    <tr>
+        <th id="col" *ngFor='let column of headers'>
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor='let row of ipodetails'>
+        <td *ngFor='let column of headers'>
+                {{row[column]}}
+        </td>
+    </tr>
+</table>

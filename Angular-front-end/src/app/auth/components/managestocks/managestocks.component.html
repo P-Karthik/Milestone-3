@@ -1,0 +1,33 @@
+<app-logoutbt></app-logoutbt>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+    <form #f="ngForm"
+    (ngSubmit)="onSubmit(f)">
+        <h3>Update Stocks</h3>
+        <div class="form-group col-md-6">
+            <label for="inputcid">Company Id</label>
+            <input type="number" class="form-control" id="inputcid" [(ngModel)]="id" name="cid">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputcname">Company Code</label>
+            <input type="text" class="form-control" id="inputcname" [(ngModel)]="companyCode" name="cname">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputexchange">Current Price</label>
+            <input type="number" class="form-control" id="inputexchange" [(ngModel)]="currentPrice" name="sename">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputprice">Date</label>
+            <input type="datetime-local" step="0.01" class="form-control" id="inputprice" [(ngModel)]="date" name="ppps">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputtotal">StockExchange Name</label>
+            <input type="text" class="form-control" id="inputtotal" [(ngModel)]="seName" name="ttns">
+        </div>
+        <button type="submit"
+                        [disabled]="f.invalid"
+                        class="btn btn-primary">Update</button>
+                    </form>
+    </div>
+    </div>
+    
